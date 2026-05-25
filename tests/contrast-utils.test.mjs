@@ -431,10 +431,14 @@ describe('calculateResult', () => {
         assert.ok(/^\d+\.\d{2}$/.test(result.wcagRatio), `wcagRatio format wrong: ${result.wcagRatio}`);
     });
 
-    test('apcaScore is a non-negative string with 1 decimal place', () => {
-        const result = calculateResult('#000000', '#ffffff', 4.5, 60);
-        assert.ok(/^\d+\.\d$/.test(result.apcaScore), `apcaScore format wrong: ${result.apcaScore}`);
-        assert.ok(parseFloat(result.apcaScore) >= 0);
+    test('apcaScore is a signed string with 1 decimal place (polarity preserved)', () => {
+        // Dark-on-light → positive Lc; light-on-dark → negative Lc.
+        const darkOnLight = calculateResult('#000000', '#ffffff', 4.5, 60);
+        assert.ok(/^-?\d+\.\d$/.test(darkOnLight.apcaScore), `apcaScore format wrong: ${darkOnLight.apcaScore}`);
+        assert.ok(parseFloat(darkOnLight.apcaScore) > 0, 'dark-on-light Lc should be positive');
+
+        const lightOnDark = calculateResult('#ffffff', '#000000', 4.5, 60);
+        assert.ok(parseFloat(lightOnDark.apcaScore) < 0, 'light-on-dark Lc should be negative');
     });
 
     test('fgRange corresponds to the foreground color', () => {
