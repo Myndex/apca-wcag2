@@ -1,8 +1,4 @@
-# APCA vs WCAG 2.- ⚙️ **Configurable thresholds** (both WCAG and APCA thresholds can be adjusted)
-- 🎲 **Multiple color selection modes** (random, fixed backgrounds, custom defaults)
-- 🔧 **Flexible color format support** (3-digit, 6-digit, with/without #)
-- 📈 **Debug statistics** for understanding result distributions
-- 👁️ **Color blindness simulation** (protanopia, deuteranopia, tritanopia for universal accessibility testing)ntrast Comparison Tool
+# APCA vs WCAG 2.x Contrast Comparison Tool
 
 A Node.js tool to compare contrast calculations between **WCAG 2.x** and **APCA (Accessible Perceptual Contrast Algorithm)** methodologies to identify disagreements between the two systems.
 
@@ -18,11 +14,12 @@ This tool generates color combinations and compares how WCAG 2.x and APCA evalua
 - 🔗 **Direct links** to online contrast testing tools
 - 📊 **CSV export** for data analysis
 - 🎯 **Advanced filtering** (WCAG fails, APCA fails, both pass, or all disagreements)
-- � **Color range targeting** (focus on specific color families like greens, warm colors, etc.)
+- 🎨 **Color range targeting** (focus on specific color families like greens, warm colors, etc.)
 - ⚙️ **Configurable thresholds** (both WCAG and APCA thresholds can be adjusted)
-- �🎲 **Multiple color selection modes** (random, fixed backgrounds, custom defaults)
+- 🎲 **Multiple color selection modes** (random, fixed backgrounds, custom defaults)
 - 🔧 **Flexible color format support** (3-digit, 6-digit, with/without #)
 - 📈 **Debug statistics** for understanding result distributions
+- 👁️ **Color blindness simulation** (protanopia, deuteranopia, tritanopia for universal accessibility testing)
 
 ## Quick Start
 
@@ -321,8 +318,8 @@ DEBUG STATISTICS (1000 combinations tested):
 **APCA (Accessible Perceptual Contrast Algorithm):**
 - Uses perceptual lightness contrast (Lc)
 - Accounts for spatial frequency, adaptation, and other visual factors
-- Continuous thresholds: 15-90 Lc based on text weight, size and use case
-- Polarity sensitive: light text on a dark background is a negative Lc value
+- Continuous threshold range for text content: Lc 45–90 by size, weight, and use case
+- Polarity sensitive: light text on a dark background returns a negative Lc value
 
 ### Color Range Processing
 - **Primary colors**: Emphasize single color channels (pure reds, greens, blues)
