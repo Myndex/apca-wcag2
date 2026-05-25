@@ -160,10 +160,16 @@ h1, h2 {
 }
 
 .details p {
-    margin: 2px 0 2px 6px;
+    margin: 2px 6px 3px 6px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.hexValues p {
+	position:relative;
+	margin: 2px auto;
+	font-family: monospace;
 }
 
 .tag {

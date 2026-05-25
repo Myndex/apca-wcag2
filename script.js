@@ -139,21 +139,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const details = document.createElement('div');
         details.className = 'details';
         details.innerHTML = `
-            <p>FG ${data.fgHex} • BG ${data.bgHex}</p>
+            <p class="hexValues">FG ${data.fgHex} • • • BG ${data.bgHex}</p>
 
 
-            <div class="links-row">
-                <a href="${wcagUrl}" target="_blank" class="link-btn" title="Verify at OddContrast">WCAG ↗</a><br>
-                <a href="${apcaUrl}" target="_blank" class="link-btn" title="Verify at Contrast.tools">APCA ↗</a>
-            </div>
+            <!-- <div class="links-row"></div> -->
 
             <p>
-                <span class="tag ${data.wcagPass ? 'pass' : 'fail'}">${data.wcagPass ? 'PASS' : 'FAIL'}</span>
-                <span>WCAG ${data.wcagRatio} (${wcagSample.level})</span>
+                <span class="tag ${data.wcagPass ? 'pass' : 'fail'}">WCAG  ${data.wcagPass ? ' PASS ' : ' FAIL'}</span>
+                <span> ${data.wcagRatio} (${wcagSample.level})</span> 
+                <span><a href="${wcagUrl}" target="_blank" class="link-btn" title="Verify at OddContrast">WCAG ↗</a>  </span>
             </p>
             <p>
-                <span class="tag ${data.apcaPass ? 'pass' : 'fail'}">${data.apcaPass ? 'PASS' : 'FAIL'}</span>
-                <span>APCA Lc ${data.apcaScore}</span>
+                <span class="tag ${data.apcaPass ? 'pass' : 'fail'}">APCA  ${data.apcaPass ? ' PASS' : ' FAIL'}</span>
+                <span> Lc ${data.apcaScore}</span>
+                <span><a href="${apcaUrl}" target="_blank" class="link-btn" title="Verify at Contrast.tools">APCA ↗</a> </span>
             </p>
             
         `;
