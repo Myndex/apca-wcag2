@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         resultsContainer.innerHTML = '';
         statusMsg.textContent = 'Generating...';
         
-        const count = 25;
+        const count = 50;
         const targetDisagreement = disagreementFilter.value;
         const targetRange = colorRangeFilter.value;
         const wcagThresh = wcagThresholdSelect.value;
@@ -129,17 +129,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 2. APCA Link (Contrast.tools)
         // Format: https://contrast.tools/?text=FG&background=BG
-        const apcaUrl = `https://contrast.tools/?text=${cleanFg}&background=${cleanBg}`;
+        // const apcaUrl = `https://contrast.tools/?text=${cleanFg}&background=${cleanBg}`;
 
         // 2b. Alt APCA Link (apcacontrast.com official demo tool)
         // Format: https://apcacontrast.com/?BG=abcdef&TXT=123456&DEV=G4g 
-        // const apcaUrl = `https://apcacontrast.com/?BG=${cleanBg}&TXT=${cleanFg}&DEV=G4g`;
+        const apcaUrl = `https://apcacontrast.com/?BG=${cleanBg}&TXT=${cleanFg}&DEV=G4g`;
 
 
         const details = document.createElement('div');
         details.className = 'details';
         details.innerHTML = `
-            <p>FG ${data.fgHex} <br> BG ${data.bgHex}</p>
+            <p>FG ${data.fgHex} • BG ${data.bgHex}</p>
             <p>
                 <span>WCAG ${data.wcagRatio} (${wcagSample.level})</span>
                 <span class="tag ${data.wcagPass ? 'pass' : 'fail'}">${data.wcagPass ? 'PASS' : 'FAIL'}</span>
