@@ -140,19 +140,22 @@ document.addEventListener('DOMContentLoaded', () => {
         details.className = 'details';
         details.innerHTML = `
             <p>FG ${data.fgHex} • BG ${data.bgHex}</p>
+
+
+            <div class="links-row">
+                <a href="${wcagUrl}" target="_blank" class="link-btn" title="Verify at OddContrast">WCAG ↗</a><br>
+                <a href="${apcaUrl}" target="_blank" class="link-btn" title="Verify at Contrast.tools">APCA ↗</a>
+            </div>
+
             <p>
-                <span>WCAG ${data.wcagRatio} (${wcagSample.level})</span>
                 <span class="tag ${data.wcagPass ? 'pass' : 'fail'}">${data.wcagPass ? 'PASS' : 'FAIL'}</span>
+                <span>WCAG ${data.wcagRatio} (${wcagSample.level})</span>
             </p>
             <p>
-                <span>APCA Lc ${data.apcaScore}</span>
                 <span class="tag ${data.apcaPass ? 'pass' : 'fail'}">${data.apcaPass ? 'PASS' : 'FAIL'}</span>
+                <span>APCA Lc ${data.apcaScore}</span>
             </p>
             
-            <div class="links-row">
-                <a href="${wcagUrl}" target="_blank" class="link-btn" title="Verify at OddContrast">Check WCAG ↗</a>
-                <a href="${apcaUrl}" target="_blank" class="link-btn" title="Verify at Contrast.tools">Check APCA ↗</a>
-            </div>
         `;
         
         card.appendChild(patch);
