@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const details = document.createElement('div');
         details.className = 'details';
         details.innerHTML = `
-            <p class="hexValues">FG ${data.fgHex} • • • BG ${data.bgHex}</p>
+            <p class="hexValues"><span>FG ${data.fgHex}</span> <span>BG ${data.bgHex}</span></p>
 
 
             <!-- <div class="links-row"></div> -->
