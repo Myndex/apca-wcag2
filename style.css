@@ -167,7 +167,7 @@ h1, h2 {
 }
 
 .hexValues p {
-    margin: 2px 0;
+    margin: 2px 24px;
     display: flex;
     align-items: center;
 	font-family: monospace;
@@ -175,7 +175,7 @@ h1, h2 {
 
 .tag {
     position: relative;
-    width: 72px;
+    width: 96px;
     font-weight: bold;
     padding: 3px 6px;
     border-radius: 4px;
